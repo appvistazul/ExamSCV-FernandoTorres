@@ -31,10 +31,18 @@
             background-color: red;
             border-radius: 15px;
         }
+
 		.boton-multiplicacion{
             background-color: yellow;
             border-radius: 15px;
         }
+
+         .boton-division{
+            background-color: blue;
+            border-radius: 15px;
+        }
+		
+
     </style>
 </head>
 <body>
@@ -86,16 +94,36 @@
         <form>
             <div class="input-container">
                 <label for="num1">Primer número:</label>
-                <input type="text" id="num6">
+                <input type="text" id="num5">
             </div>
             <div class="input-container">
                 <label for="num2">Segundo número:</label>
-                <input type="text" id="num7">
+                <input type="text" id="num6">
             </div>
             <input type="button" value="Calcular multiplicacion" class="boton-multiplicacion" onclick="calcularMultiplicacion()">
         </form>
 
         <div id="resultado-multiplicacion"></div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+        <h2>Division de dos números</h2>
+
+        <form>
+            <div class="input-container">
+                <label for="num1">Primer número:</label>
+                <input type="text" id="num7">
+            </div>
+            <div class="input-container">
+                <label for="num2">Segundo número:</label>
+                <input type="text" id="num8">
+            </div>
+            <input type="button" value="Calcular division" class="boton-division" onclick="calcularDivision()">
+        </form>
+
+        <div id="resultado-division"></div>
     </div>
 </div>
 
@@ -136,10 +164,11 @@ function calcularResta() {
     }
 }
 
+
 function calcularMultiplicacion() {
-    // Obtener los valores de los campos de entrada
-    var num1 = parseFloat(document.getElementById("num6").value);
-    var num2 = parseFloat(document.getElementById("num7").value);
+     // Obtener los valores de los campos de entrada
+    var num1 = parseFloat(document.getElementById("num5").value);
+    var num2 = parseFloat(document.getElementById("num6").value);
 
     // Verificar si ambos valores son números
     if (!isNaN(num1) && !isNaN(num2)) {
@@ -153,6 +182,27 @@ function calcularMultiplicacion() {
         document.getElementById("resultado-multiplicacion").innerHTML = "Por favor, ingrese dos números válidos.";
     }
 }
+
+function calcularDivision() {
+     // Obtener los valores de los campos de entrada
+    var num1 = parseFloat(document.getElementById("num7").value);
+    var num2 = parseFloat(document.getElementById("num8").value);
+
+    // Verificar si ambos valores son números
+    if (!isNaN(num1) && !isNaN(num2)) {
+        // Calcular la resta
+        var division = num1 / num2;
+
+        // Mostrar el resultado en el elemento con id "resultado"
+        document.getElementById("resultado-division").innerHTML = "El resultado de la division es: " + division;
+    } else {
+        // Mostrar un mensaje de error si los valores no son números
+        document.getElementById("resultado-division").innerHTML = "Por favor, ingrese dos números válidos.";
+    }
+}
+
+
+
 </script>
 
 </body>
